@@ -53,13 +53,17 @@ In our experiment, we will compare our learning by changing the following factor
 
 We play around our code and set min_epsilon, we realize that the higher lower bound we set, the worse the performance will be. So we test our result from 0 to 0.3 and take 0.03 a step, then iterate each step five times to plotted the graph.
 
-<img align="center" src="src/epsilon-exploration-rate/epsilon curve.png">
+<p align="center">
+<img src="src/epsilon-exploration-rate/epsilon curve.png" width="600">
+</p>
 
 As we can see, the mean episode for learning will be minimized when epsilon = 0. The result is not surprising because for a simple problem like this, there is not much variance for the environment and no need for exploration as long as we get the job done. As a result, we got the best average performance when we set min_epsilon to 0. 
 
 Using the similar idea for min_alpha, we test our result from 0.3 to 0.9 and take 0.1 a step, then iterate each step five times to plotted the graph. We got the best average performance when we set min_alpha to 0.6. It’s very interesting how it performs well when alpha is around 0.4 and 0.6. But I wouldn’t double too much about this finding because it’s close to the golden ratio. Starting from some point, we will keep learning at the rate of 0.6. 
 
-<img align="center" src="src/alpha-learning-rate/alpha curve.png">
+<p align="center">
+<img src="src/alpha-learning-rate/alpha curve.png" width="600">
+</p>
  
 ### Ada_divisor
 
@@ -75,11 +79,15 @@ We discover that sometimes, setting a lower bound for learning and exploration r
 
 The number of buckets determines how many states we will have. Intuitively, the more states you have, the more precisely you will learn. But if you have only few states, you might not even be able to learn. For a simple model like this, we would like to discuss how we should set our buckets so that the we will learn quicker. Also we want to minimize the number of states because it is intuitive that after some point, it might not be necessary for us to divide the bucket further, and the performance will resemble. Yet our result show it differently. To simplify the process, we set the two buckets variable in this form: buckets=(x, x,) for some x. We will set x to be from 10 to 90 with a step of 10, repeating five times to get the average for each steps, given the chance of 2000 episodes.
 
-<img align="center" src="src/buckets/buckets10-90.png">
+<p align="center">
+<img src="src/buckets/buckets10-90.png" width="600">
+</p>
 
 From this graph, we learn that it gets worse when we divide our buckets further. When x = 70, 80 and 90, we will not even solve the problem before 2000 episodes. This results correct our previous thoughts and it means that as we have over-numbered states, we manually complicate the problem and as a result, we need more episodes to gradually reach every states and update the state reward, or our experience. This takes us further to see what is the minimal numbers of states required for mountain car to learn and solve this problem. We adjust our buckets, or x from 2 to 10, and have the following result:
 
-<img align="center" src="src/buckets/buckets2-10.png">
+<p align="center">
+<img src="src/buckets/buckets2-10.png" width="600">
+</p>
 
 It is not hard to see that we get the best performance at around buckets = 8 by 8 and 9 by 9.
 
