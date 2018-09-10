@@ -37,11 +37,16 @@ Also there are some hyperparameters:
 
 In our experiment, we will compare our learning by changing the following factors: min_epsilon for exploration rate, min_alpha for learning rate, ada_divisor for adjusting epsilon and alpha curve, and finally, buckets for number of states. For each of those hyperparameters, we will first set up a few numbers that is widely spread among the domain of it, then get a general idea of which interval the best performance will be likely to occur. Then we will run a script that will go through that range step by step and compare the average performance to get a good hyperparameter. Our initial hyperparameters are set as following:
 
-<p aligh="center">
-min_epsilon=0.1/
-min_alpha=0.3/
-ada_divisor=25/
-buckets=(40, 40,)/
+<p>
+	
+                                      min_epsilon=0.1
+
+                                       min_alpha=0.3
+
+                                       ada_divisor=25
+
+                                      buckets=(40, 40,)
+
 </p>
 
 ### Min_epsilon and Min_alpha
