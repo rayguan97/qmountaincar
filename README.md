@@ -7,13 +7,13 @@ Code based on the environment from [OpenAI Gym](https://gym.openai.com/envs/Moun
 
 ## Introduction
 	
-After learning the cartpole example in class, we decide to choose another training model from classic control and explore what the training will be for another basic model with a relatively complicated behavior and a hard-to-get goal. First we will talk about some background information about Q-learning. Second, we will compare the effectiveness of learning with different starting points and find a good hyperparameters to start our learning. Then we will show the data we collect and analyze the reason behind the data. Finally we will make some conclusion for the difference between cartpole and mountain car with Q-learning. 
+In this project, we decide to choose a training model from classic control and explore with a relatively complicated behavior and a hard-to-get goal. First we will talk about some background information about Q-learning. Second, we will compare the effectiveness of learning with different starting points and find a good hyperparameters to start our learning. Then we will show the data we collect and analyze the reason behind the data. Finally we will make some conclusions for the difference between cartpole and mountain car with Q-learning. 
 
 ## Background information
 
 To understand our project, basic understanding of q-learning is required, which is a reinforcement learning technique used in machine learning. Given a set of hyperparameters, the q-learning will get experience from episodes and update the state reward and build up towards (or converges to) an optimal policy. This technique doesn’t requirement a model of an environment, and just learn from episodes. The Q-Learning algorithm can be described as the following steps:
 
-1. Initialize the Values table Q(s, a)
+1. Initialize the Values table Q(s, a), or a matrix Q.
 2. Choose current state s (can be chosen randomly)
 3. Choose an action a for the next state greedily based on Q Values in table
 4. Take the action, and observe the reward r as well as the new state s’
@@ -37,11 +37,12 @@ Also there are some hyperparameters:
 
 In our experiment, we will compare our learning by changing the following factors: min_epsilon for exploration rate, min_alpha for learning rate, ada_divisor for adjusting epsilon and alpha curve, and finally, buckets for number of states. For each of those hyperparameters, we will first set up a few numbers that is widely spread among the domain of it, then get a general idea of which interval the best performance will be likely to occur. Then we will run a script that will go through that range step by step and compare the average performance to get a good hyperparameter. Our initial hyperparameters are set as following:
 
-
-min_epsilon=0.1
-min_alpha=0.3
-ada_divisor=25
-buckets=(40, 40,)
+<p aligh="center">
+min_epsilon=0.1/
+min_alpha=0.3/
+ada_divisor=25/
+buckets=(40, 40,)/
+</p>
 
 ### Min_epsilon and Min_alpha
 
