@@ -39,13 +39,13 @@ In our experiment, we will compare our learning by changing the following factor
 
 <p>
 	
-                                      min_epsilon=0.1
+                                            min_epsilon=0.1
 
-                                       min_alpha=0.3
+                                             min_alpha=0.3
 
-                                       ada_divisor=25
+                                             ada_divisor=25
 
-                                      buckets=(40, 40,)
+                                            buckets=(40, 40,)
 
 </p>
 
@@ -69,10 +69,13 @@ Using the similar idea for min_alpha, we test our result from 0.3 to 0.9 and tak
 
 We discover that sometimes, setting a lower bound for learning and exploration rate is not that much critical to how fast we learn so that we can reach our goal. We believe choosing a right slope for epsilon and alpha curve can play a greater role in improving our learning. So similarly, we choose to test the result from 25 to 100 and take 15 a step, then iterate each step five times to plotted the graph. Unfortunately, we did three different experiments and the results appears to be random. Therefore we cannot conclude much about how ada_divisor will affect q-learning from this particular example and method. The following are the results from three different experiments: 
 
-<p float="left">
-  <img src="src/ada-divisor/ada-divisor.png" width="288" />
-  <img src="src/ada-divisor/ada-divisor2.png" width="288" /> 
-  <img src="src/ada-divisor/ada-divisor3.png" width="288" />
+<p>
+  <img src="src/ada-divisor/ada-divisor.png" width="432" />
+  <img src="src/ada-divisor/ada-divisor2.png" width="432" /> 
+</p>
+
+<p align="center">
+<img align="center" src="src/ada-divisor/ada-divisor3.png" width="550" />
 </p>
 
 ### Buckets
