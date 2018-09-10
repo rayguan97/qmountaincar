@@ -1,5 +1,5 @@
 # Q_MountainCar
-Mountain Car Training using Q-learning 
+[Mountain Car](https://gym.openai.com/envs/MountainCar-v0/) Training using Q-learning 
 
 Author: Tianrui Guan, Yexin Wu, Phuong Minh Nguyen 
 
@@ -7,7 +7,7 @@ Code based on the environment from [OpenAI Gym](https://gym.openai.com/envs/Moun
 
 ## Introduction
 	
-In this project, we decide to choose a training model from classic control and explore with a relatively complicated behavior and a hard-to-get goal. First we will talk about some background information about Q-learning. Second, we will compare the effectiveness of learning with different starting points and find a good hyperparameters to start our learning. Then we will show the data we collect and analyze the reason behind the data. Finally we will make some conclusions for the difference between cartpole and mountain car with Q-learning. 
+In this project, we decide to choose a training model from classic control and explore with a relatively complicated behavior and a hard-to-get goal. First we will talk about some background information about Q-learning. Second, we will compare the effectiveness of learning with different starting points and find a good hyperparameters to start our learning. Then we will show the data we collect and analyze the reason behind the data. Finally we will make some conclusions for the difference between [cartpole](https://gym.openai.com/envs/CartPole-v0/) and [mountain car](https://gym.openai.com/envs/MountainCar-v0/) with Q-learning. 
 
 ## Background information
 
@@ -86,7 +86,7 @@ The number of buckets determines how many states we will have. Intuitively, the 
 <img src="src/buckets/buckets10-90.png" width="600">
 </p>
 
-From this graph, we learn that it gets worse when we divide our buckets further. When x = 70, 80 and 90, we will not even solve the problem before 2000 episodes. This results correct our previous thoughts and it means that as we have over-numbered states, we manually complicate the problem and as a result, we need more episodes to gradually reach every states and update the state reward, or our experience. This takes us further to see what is the minimal numbers of states required for mountain car to learn and solve this problem. We adjust our buckets, or x from 2 to 10, and have the following result:
+From this graph, we learn that it gets worse when we divide our buckets further. When x = 70, 80 and 90, we will not even solve the problem before 2000 episodes. This results correct our previous thoughts and it means that as we have over-numbered states, we manually complicate the problem and as a result, we need more episodes to gradually reach every states and update the state reward, or our experience. This takes us further to see what is the minimal numbers of states required for [mountain car](https://gym.openai.com/envs/MountainCar-v0/) to learn and solve this problem. We adjust our buckets, or x from 2 to 10, and have the following result:
 
 <p align="center">
 <img src="src/buckets/buckets2-10.png" width="600">
@@ -97,6 +97,6 @@ It is not hard to see that we get the best performance at around buckets = 8 by 
 
 ## Conclusion
 
-In general, we need more episodes to solve mountain car problem than cartpole. After experimenting, we have some intuition of why mountain car needs more episodes. We need to blindly explore before we have an positive reward(reach the top) to know that we are doing right. The expenses for getting to the top for the first time is high. The more we have some positive feedback, the better we learn. 
+In general, we need more episodes to solve [mountain car](https://gym.openai.com/envs/MountainCar-v0/) problem than [cartpole](https://gym.openai.com/envs/CartPole-v0/). After experimenting, we have some intuition of why [mountain car](https://gym.openai.com/envs/MountainCar-v0/) needs more episodes. We need to blindly explore before we have an positive reward(reach the top) to know that we are doing right. The expenses for getting to the top for the first time is high. The more we have some positive feedback, the better we learn. 
 
 After finding the best hyperparameters, we can conclude that, firstly for simple problems with relatively robust environment, we don’t need to keep explore the environment much once we get the job done. Second, even though we did not strictly test at what rate we should learn after we reach some episodes, but around 0.6 or 0.4 could be a good starting point if you have absolutely no idea which number you should pick. Third, we realize we cannot conclude much about ada-divisor from our methods because it appears the performance varies for each experiments. Lastly, we learn that for this particular problem, the best number of buckets is 9 by 9. 
