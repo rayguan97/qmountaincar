@@ -3,6 +3,8 @@ Mountain Car Training using Q-learning
 
 Author: Tianrui Guan, Yexin Wu, Phuong Minh Nguyen 
 
+Code based on the environment from [OpenAI Gym](https://gym.openai.com/envs/MountainCar-v0/).
+
 ## Introduction
 	
 After learning the cartpole example in class, we decide to choose another training model from classic control and explore what the training will be for another basic model with a relatively complicated behavior and a hard-to-get goal. First we will talk about some background information about Q-learning. Second, we will compare the effectiveness of learning with different starting points and find a good hyperparameters to start our learning. Then we will show the data we collect and analyze the reason behind the data. Finally we will make some conclusion for the difference between cartpole and mountain car with Q-learning. 
