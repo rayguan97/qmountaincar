@@ -65,6 +65,12 @@ Using the similar idea for min_alpha, we test our result from 0.3 to 0.9 and tak
 
 We discover that sometimes, setting a lower bound for learning and exploration rate is not that much critical to how fast we learn so that we can reach our goal. We believe choosing a right slope for epsilon and alpha curve can play a greater role in improving our learning. So similarly, we choose to test the result from 25 to 100 and take 15 a step, then iterate each step five times to plotted the graph. Unfortunately, we did three different experiments and the results appears to be random. Therefore we cannot conclude much about how ada_divisor will affect q-learning from this particular example and method. The following are the results from three different experiments: 
 
+<p float="left">
+  <img src="src/ada-divisor/ada-divisor.png" width="288" />
+  <img src="src/ada-divisor/ada-divisor2.png" width="288" /> 
+  <img src="src/ada-divisor/ada-divisor3.png" width="288" />
+</p>
+
 ### Buckets
 
 The number of buckets determines how many states we will have. Intuitively, the more states you have, the more precisely you will learn. But if you have only few states, you might not even be able to learn. For a simple model like this, we would like to discuss how we should set our buckets so that the we will learn quicker. Also we want to minimize the number of states because it is intuitive that after some point, it might not be necessary for us to divide the bucket further, and the performance will resemble. Yet our result show it differently. To simplify the process, we set the two buckets variable in this form: buckets=(x, x,) for some x. We will set x to be from 10 to 90 with a step of 10, repeating five times to get the average for each steps, given the chance of 2000 episodes.
