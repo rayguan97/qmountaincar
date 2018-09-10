@@ -1,7 +1,7 @@
 # Q_MountainCar
 Mountain Car Training using Q-learning 
 
-Tianrui Guan, Yexin Wu, Phuong Minh Nguyen 
+Author: Tianrui Guan, Yexin Wu, Phuong Minh Nguyen 
 
 ## Introduction
 	
